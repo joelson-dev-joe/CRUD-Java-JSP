@@ -4,7 +4,9 @@
     Author     : Joelson Correia
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="br.com.mercado.dao.ProdutoDAO"%>
+<%@page import="br.com.mercado.model.Produto"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +14,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%
+            try {
+                    ProdutoDAO prd = new ProdutoDAO();
+                    prd.exluir(Integer.parseInt(request.getParameter("codigo")));
+                    response.sendRedirect("index.jsp");
+                } catch (Exception erro) {
+                    throw new RuntimeException("Erro 9" + erro);
+                }
+        %>
     </body>
 </html>
