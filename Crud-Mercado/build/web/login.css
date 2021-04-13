@@ -1,0 +1,15 @@
+/* 
+    Created on : 13/04/2021, 17:07:26
+    Author     : Joelson Correia
+*/
+body {
+    background: red;
+}
+
+#login {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    background-color: yellow;
+    box-shadow: 5px 5px 8px #363636;
+}

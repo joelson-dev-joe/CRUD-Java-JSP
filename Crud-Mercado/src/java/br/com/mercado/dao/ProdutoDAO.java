@@ -58,7 +58,7 @@ public class ProdutoDAO {
     }
 
     public void exluir(int valor) {
-        String sql = "DELETE *from produto WHERE codigo_produto = " + valor;
+        String sql = "DELETE from produto WHERE codigo_produto = " + valor;
         try {
             st = conn.createStatement();
             st.execute(sql);
@@ -75,13 +75,13 @@ public class ProdutoDAO {
             rs = st.executeQuery(sql);
             while(rs.next()){
                 Produto produto = new Produto();
-                produto.setCodigo_produto(rs.getInt("codigo_produto)"));
+                produto.setCodigo_produto(rs.getInt("codigo_produto"));
                 produto.setDescricao_produto(rs.getString("descricao_produto"));
                 produto.setPreco_produto(rs.getDouble("preco_produto"));
                 lista.add(produto);
             }
         } catch (Exception erro) {
-            throw new RuntimeException("Erro 5" + erro);
+            throw new RuntimeException("Erro 5 " + erro);
         }
         return lista;
     }
@@ -93,7 +93,7 @@ public class ProdutoDAO {
             rs = st.executeQuery(sql);
             while(rs.next()){
                 Produto produto = new Produto();
-                produto.setCodigo_produto(rs.getInt("codigo_produto)"));
+                produto.setCodigo_produto(rs.getInt("codigo_produto"));
                 produto.setDescricao_produto(rs.getString("descricao_produto"));
                 produto.setPreco_produto(rs.getDouble("preco_produto"));
                 lista.add(produto);
